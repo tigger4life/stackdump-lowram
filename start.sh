@@ -32,7 +32,7 @@ rm questionsStartId.xml answersWithoutDeletedQuestions.xml
 
 echo step9
 mkdir /home/$USERNAME/tmp #creates a tmp dir. add your username
-sort -T /home/$USERNAME/tmp --parallel=2 -k 1n -n -o combinedSorted.xml combinedNotSorted.xml #sorts everything in tmp dir. let it do its thing, takes a couple hours.
+sort -T /home/$USERNAME/tmp --parallel=8 -k 1n -n -o combinedSorted.xml combinedNotSorted.xml #sorts everything in tmp dir. let it do its thing, takes a couple hours.
 rm combinedNotSorted.xml
 
 echo step10
@@ -44,6 +44,7 @@ echo step11
 cat lastLine.xml >> Posts.xml #adds the lastline to the file.
 rm lastLine.xml
 rm header.xml
+rm Posts.xml-old
 rm -rf /home/$USERNAME/tmp
 
 echo DONE!
